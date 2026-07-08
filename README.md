@@ -1,12 +1,24 @@
 # FlyRank
 
-Capstone project for the **Frontend AI Engineering** track. FlyRank is a React application built with AI-assisted development workflows, with an emphasis on maintainable code, conventional Git practices, and professional engineering habits.
+Capstone project for the **Frontend AI Engineering** track. FlyRank is a single-page React application built with AI-assisted development workflows, with an emphasis on maintainable code, conventional Git practices, and professional engineering habits.
 
 ## Overview
 
-This repository documents the end-to-end process of building a frontend application with modern tooling and AI pair programming. The focus is not only on the final product, but on how software is planned, implemented, reviewed, and versioned.
+This repository documents the end-to-end process of building a frontend application with modern tooling and AI pair programming. The app is a clean, responsive landing page composed of reusable React components — a foundation that can grow into a full product over time.
 
-**Current status:** Early development — Vite + React starter scaffold in place.
+**Current status:** One-page landing live — header, hero, features, about, and footer sections implemented.
+
+## What's on the Page
+
+| Section | Description |
+| --- | --- |
+| **Header** | FlyRank logo and navigation links |
+| **Hero** | Headline, project summary, and call-to-action buttons |
+| **Features** | Three cards highlighting the stack, AI workflow, and architecture |
+| **About** | Capstone project context and goals |
+| **Footer** | Copyright and attribution |
+
+The layout is fully responsive and supports light/dark mode via CSS custom properties.
 
 ## Tech Stack
 
@@ -64,18 +76,26 @@ Open [http://localhost:5173](http://localhost:5173) in your browser. The dev ser
 
 ```
 flyrank/
-├── public/              # Static assets served as-is
+├── public/                  # Static assets (favicon, icons)
 ├── src/
-│   ├── assets/          # Images and other imported assets
-│   ├── App.jsx          # Root application component
-│   ├── App.css          # App-level styles
-│   ├── main.jsx         # React entry point
-│   └── index.css        # Global styles
-├── CLAUDE.md            # AI and coding conventions for this repo
-├── eslint.config.js     # ESLint configuration
-├── index.html           # HTML shell
-├── package.json         # Dependencies and npm scripts
-├── vite.config.js       # Vite configuration
+│   ├── components/          # Reusable UI sections
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Features.jsx
+│   │   ├── About.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   └── LandingPage.jsx  # Composes all sections into one page
+│   ├── assets/              # SVG and image assets
+│   ├── App.jsx              # Root component — renders LandingPage
+│   ├── App.css              # Landing page styles
+│   ├── main.jsx             # React entry point
+│   └── index.css            # Global styles and CSS variables
+├── CLAUDE.md                # AI and coding conventions for this repo
+├── eslint.config.js         # ESLint configuration
+├── index.html               # HTML shell
+├── package.json             # Dependencies and npm scripts
+├── vite.config.js           # Vite configuration
 └── README.md
 ```
 
@@ -91,9 +111,9 @@ flyrank/
 Commit messages follow the Conventional Commits format:
 
 ```
-feat: add user profile component
-fix: correct counter state reset
-docs: update README setup instructions
+feat: add landing page hero section
+fix: correct mobile nav layout on small screens
+docs: update README project structure
 ```
 
 Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `chore`, `test`
