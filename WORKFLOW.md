@@ -18,7 +18,14 @@ The structured workflow produced higher-quality code with better maintainability
 
 ## AI Mistake Found
 
-During review, I noticed that the AI initially failed to disable the Save button correctly when validation errors existed. This behavior was manually corrected after testing.
+During the review process, I discovered that the AI-generated `SettingsForm.test.jsx` file was incomplete. It omitted the required imports for `test` and `expect` from Vitest:
+
+```javascript
+import { test } from "vitest";
+import { expect } from "vitest";
+```
+
+Without these imports, the test file would not compile or execute correctly. I added the missing imports and verified that the test file was properly configured before committing the changes.
 
 ## Lessons Learned
 
