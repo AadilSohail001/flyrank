@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import SettingsForm from "./SettingsForm";
+import { test } from "vitest";
+import { expect } from "vitest";
 
 test("shows validation errors", async () => {
   render(<SettingsForm />);
